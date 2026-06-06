@@ -1,0 +1,12 @@
+ready:2026-06-06T06:00:33.303519+09:00
+https://finance.yahoo.com/
+  ⚠ NVDA article_url 무효 (url_valid=false): https://finance.yahoo.com/
+  ⚠ AVGO article_url 무효 (url_valid=false): https://finance.yahoo.com/
+  → 3종목 선정 (url_valid: 0/3): ['TSLA', 'NVDA', 'AVGO']
+  저장: /Users/abcd/ai_workplace_mac/shorts_maker/state/today_picks.json
+
+[AUTO] ✗ TSLA 스킵 (url_valid=false): https://finance.yahoo.com/
+
+[AUTO] ✗ NVDA 스킵 (url_valid=false): https://finance.yahoo.com/
+
+[AUTO] 완료 → /Users/abcd/ai_workplace_mac/shorts_maker/runs/run_20260605_210019

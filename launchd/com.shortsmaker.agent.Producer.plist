@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- 파이프라인 에이전트 'Producer' 원격제어 세션. agent_remote.sh 가 감시·자동재기동. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.shortsmaker.agent.Producer</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/abcd/ai_workplace_mac/shorts_maker/harness/agent_remote.sh</string>
+  </array>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>15</integer>
+  <key>WorkingDirectory</key><string>/Users/abcd/ai_workplace_mac/shorts_maker</string>
+  <key>StandardOutPath</key><string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/agent_Producer.out</string>
+  <key>StandardErrorPath</key><string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/agent_Producer.err</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/usr/local/bin:/opt/homebrew/bin:/Users/abcd/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key><string>/Users/abcd</string>
+    <key>AGENT_NAME</key><string>Producer</string>
+    <key>AGENT_CWD</key><string>/Users/abcd/ai_workplace_mac/shorts_maker/agents/Producer</string>
+  </dict>
+</dict>
+</plist>

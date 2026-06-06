@@ -1,0 +1,77 @@
+{
+  "assets": [
+    {
+      "file": "assets/mascot/trader_cho_vector.png",
+      "raw_file": "assets/mascot/trader_cho_vector_raw.png",
+      "type": "mascot",
+      "title": "Trader Cho — vector bull mascot (candidate 1)",
+      "source": "Canva AI generate-design (MCP)",
+      "design_id": "DAHLgoNTJyg",
+      "view_url": "https://www.canva.com/d/MHo6KvjCvaYsW8L",
+      "license": "Canva Free plan content — usage per Canva Content License Agreement; AI-generated, no real-person likeness",
+      "background_removed": "PIL flood-fill (corners, thresh=42), cropped bbox+24px pad",
+      "added": "2026-06-03",
+      "note": "User-selected main mascot. Replaces 3D mascot as CLEAN_SRC. Expression poses (vector) pending."
+    },
+    {
+      "file": "assets/mascot/poses_vector/surprise.png",
+      "type": "mascot_expression",
+      "expression": "surprise",
+      "source": "Canva AI generate-design (MCP)",
+      "design_id": "DAHLghBEyIU",
+      "candidate": "shocked_B",
+      "license": "Canva Free plan content — Canva Content License; AI-generated, no real-person likeness",
+      "background_removed": "PIL flood-fill thresh=88 + bottom desaturated-shadow removal",
+      "added": "2026-06-03",
+      "note": "Vector expression set matching trader_cho_vector main mascot."
+    },
+    {
+      "file": "assets/mascot/poses_vector/point.png",
+      "type": "mascot_expression",
+      "expression": "point",
+      "source": "Canva AI generate-design (MCP)",
+      "design_id": "DAHLgpHCYnA",
+      "candidate": "analysis_B",
+      "license": "Canva Free plan content — Canva Content License; AI-generated, no real-person likeness",
+      "background_removed": "PIL flood-fill thresh=88 + bottom desaturated-shadow removal",
+      "added": "2026-06-03",
+      "note": "Vector expression set matching trader_cho_vector main mascot."
+    },
+    {
+      "file": "assets/mascot/poses_vector/warn.png",
+      "type": "mascot_expression",
+      "expression": "warn",
+      "source": "Canva AI generate-design (MCP)",
+      "design_id": "DAHLgnW3oAg",
+      "candidate": "warning_B",
+      "license": "Canva Free plan content — Canva Content License; AI-generated, no real-person likeness",
+      "background_removed": "PIL flood-fill thresh=88 + bottom desaturated-shadow removal",
+      "added": "2026-06-03",
+      "note": "Vector expression set matching trader_cho_vector main mascot."
+    },
+    {
+      "file": "assets/mascot/poses_vector/celebrate.png",
+      "type": "mascot_expression",
+      "expression": "celebrate",
+      "source": "Canva AI generate-design (MCP)",
+      "design_id": "DAHLgsxs-MM",
+      "candidate": "cheer_B",
+      "license": "Canva Free plan content — Canva Content License; AI-generated, no real-person likeness",
+      "background_removed": "PIL flood-fill thresh=88 + bottom desaturated-shadow removal",
+      "added": "2026-06-03",
+      "note": "Vector expression set matching trader_cho_vector main mascot."
+    },
+    {
+      "file": "assets/mascot/poses_vector/think.png",
+      "type": "mascot_expression",
+      "expression": "think",
+      "source": "Canva AI generate-design (MCP)",
+      "design_id": "DAHLgqqOkZA",
+      "candidate": "thinking_A",
+      "license": "Canva Free plan content — Canva Content License; AI-generated, no real-person likeness",
+      "background_removed": "PIL flood-fill thresh=88 + bottom desaturated-shadow removal",
+      "added": "2026-06-03",
+      "note": "Vector expression set matching trader_cho_vector main mascot."
+    }
+  ]
+}

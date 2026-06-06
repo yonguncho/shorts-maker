@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Trader Cho 자동화 스케줄러.
+     scheduler.py 가 ET 16:30 stage00 / 17:00 pipeline --auto 를 내부 관리.
+     RunAtLoad+KeepAlive → 부팅 자동 시작, 죽으면 재시작.
+
+     설치:
+       cp launchd/com.tradercho.scheduler.plist ~/Library/LaunchAgents/
+       launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.tradercho.scheduler.plist
+
+     상태 확인:
+       launchctl print gui/$(id -u)/com.tradercho.scheduler | grep -E "state|pid"
+       tail -f /Users/abcd/ai_workplace_mac/shorts_maker/logs/scheduler.log
+
+     중지:
+       launchctl bootout gui/$(id -u)/com.tradercho.scheduler
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.tradercho.scheduler</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/abcd/ai_workplace_mac/shorts_maker/.venv/bin/python</string>
+    <string>/Users/abcd/ai_workplace_mac/shorts_maker/tradercho/scheduler.py</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker</string>
+
+  <!-- 부팅/로드 시 자동 시작 -->
+  <key>RunAtLoad</key>
+  <true/>
+
+  <!-- 죽으면 자동 재시작 -->
+  <key>KeepAlive</key>
+  <true/>
+
+  <!-- scheduler.py 내부 FileHandler가 scheduler.log에 기록. stdout 이중기록 방지 -->
+  <key>StandardOutPath</key>
+  <string>/dev/null</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/scheduler_error.log</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/opt/homebrew/bin:/Users/abcd/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <!-- 로그가 버퍼 없이 즉시 기록되도록 -->
+    <key>PYTHONUNBUFFERED</key>
+    <string>1</string>
+  </dict>
+</dict>
+</plist>

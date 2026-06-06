@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- main_harness: 파이프라인 실행. 영속 루프가 아니라 스케줄/명령 기반.
+     RunAtLoad=true → 재부팅 시 1회 'resume' 실행하여 중단된 런을 이어감(③ 상태복원).
+     주기 실행은 StartCalendarInterval 로 (예: 미국 장 마감 후). 지금은 TODO. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shortsmaker.harness</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/abcd/ai_workplace_mac/shorts_maker/harness/main_harness.sh</string>
+    <string>resume</string>
+  </array>
+  <!-- 재부팅 시 중단된 런 자동 재개. 자동재개를 원치 않으면 false 로. -->
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <false/>
+  <key>WorkingDirectory</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker</string>
+  <key>StandardOutPath</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/main_harness.out</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/main_harness.err</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/opt/homebrew/bin:/Users/abcd/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <!-- TODO: 주기 실행 스케줄 (설계 단계 확정)
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>22</integer><key>Minute</key><integer>0</integer></dict>
+  -->
+</dict>
+</plist>

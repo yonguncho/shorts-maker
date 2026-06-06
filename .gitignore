@@ -1,0 +1,55 @@
+# ── 시크릿 — 절대 커밋 금지 ──────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── 생성 산출물 (대용량, 재생성 가능) ────────────────
+outputs/
+runs/
+output/*
+!output/.gitkeep
+
+# ── 다운로드 에셋 (재다운로드 가능) ─────────────────
+assets/stock/
+assets/stock_video/
+assets/logos/
+# mascot·bgm·channel 은 소스 에셋 → 트래킹 유지
+
+# ── RAG / ChromaDB ────────────────────────────────────
+rag_db/
+rag/embeddings/
+rag/cache/
+rag/*.bin
+rag/*.faiss
+!rag/.gitkeep
+
+# ── 런타임 상태 ───────────────────────────────────────
+state/*.json
+!state/*.schema.json
+!state/.gitkeep
+run/*
+!run/.gitkeep
+*.pid
+
+# ── 로그 ──────────────────────────────────────────────
+logs/*
+!logs/.gitkeep
+*.log
+
+# ── 캐시 ──────────────────────────────────────────────
+.cache/
+tradercho/__pycache__/
+tradercho/assets_manifest.json
+
+# ── macOS ─────────────────────────────────────────────
+.DS_Store
+
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# ── Node ──────────────────────────────────────────────
+node_modules/

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/abcd/ai_workplace_mac/shorts_maker/**)",
+      "Bash(ls -la agents/)"
+    ]
+  }
+}

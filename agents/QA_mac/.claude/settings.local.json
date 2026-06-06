@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/abcd/ai_workplace_mac/shorts_maker/agents/**)",
+      "Read(//Users/abcd/ai_workplace_mac/shorts_maker/agents/Director_mac/**)",
+      "Read(//Users/abcd/ai_workplace_mac/shorts_maker/shared/**)",
+      "Read(//Users/abcd/ai_workplace_mac/shorts_maker/**)",
+      "Bash(ps -p 54773 -o pid,stat,etime,command)",
+      "Bash(ps -axo pid,ppid,stat,etime,command)",
+      "Bash(ps -p 5697 -o %cpu=,stat=)",
+      "Bash(perl -pe 's/\\\\x1b\\\\[[0-9;]*[A-Za-z]//g; s/[^\\\\x20-\\\\x7e]//g')",
+      "Bash(perl -pe 's/\\\\x1b\\\\][0-9];[^\\\\x07]*\\\\x07//g; s/\\\\x1b\\\\[[0-9;?]*[A-Za-z]//g; s/\\\\r//g')",
+      "Bash(perl -pe 's/[^\\\\x09\\\\x0a\\\\x20-\\\\x7e가-힣ㄱ-ㅎ]//g')",
+      "Bash(grep -v '^[[:space:]]*$')",
+      "Bash(python3 -c ' *)",
+      "Bash(perl -pe 's/\\\\x1b\\\\[[0-9;?]*[A-Za-z]//g; s/[^\\\\x20-\\\\x7e가-힣]//g')",
+      "Bash(ps -p 91822 -o %cpu=)",
+      "Bash(perl -pe 's/[^\\\\x20-\\\\x7e가-힣]//g')"
+    ]
+  }
+}

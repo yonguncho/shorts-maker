@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "id": "shorts_maker",
+  "title": "US Market Commentary Shorts Maker",
+  "machine": "mac",
+  "node_id": "mac-shorts-01",
+  "description": "미국 증시 데이터를 분석해 무음+BGM+영어자막의 차트 중심 유튜브 쇼츠를 제작. 게시는 수동.",
+  "capabilities": [
+    "shorts",
+    "ffmpeg",
+    "chart_render",
+    "market_data",
+    "video_render"
+  ],
+  "schedule": {
+    "kind": "cron",
+    "expr": "TODO",
+    "timezone": "UTC",
+    "_todo": "실행 주기 — 설계 단계에서 확정 (예: 미국 장 마감 후)"
+  },
+  "approval_gates": [
+    "before_publish"
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "name": "data_collection",
+      "agent": "Analyst"
+    },
+    {
+      "id": 2,
+      "name": "analysis_report",
+      "agent": "Analyst"
+    },
+    {
+      "id": 3,
+      "name": "topic_selection",
+      "agent": "Producer"
+    },
+    {
+      "id": 4,
+      "name": "script_writing",
+      "agent": "Producer"
+    },
+    {
+      "id": 5,
+      "name": "qa_script",
+      "agent": "QA_mac"
+    },
+    {
+      "id": 6,
+      "name": "chart_render",
+      "agent": "Editor"
+    },
+    {
+      "id": 7,
+      "name": "video_render",
+      "agent": "Editor"
+    },
+    {
+      "id": 8,
+      "name": "qa_video",
+      "agent": "QA_mac"
+    },
+    {
+      "id": 9,
+      "name": "publish_prep",
+      "agent": "CTO_mac"
+    },
+    {
+      "id": 10,
+      "name": "lessons_meta",
+      "agent": "Director_mac"
+    }
+  ],
+  "agents": [
+    "CTO_mac",
+    "Analyst",
+    "Producer",
+    "Editor",
+    "QA_mac",
+    "Codex",
+    "Director_mac"
+  ],
+  "adversarial": {
+    "engine": "codex",
+    "enabled": true,
+    "_enabled_utc": "2026-06-01T14:55:00Z"
+  },
+  "command_bus": {
+    "kind": "local_file",
+    "path": "state/cto_mac_cmd.json",
+    "_todo": "추후 중앙 명령버스로 교체"
+  },
+  "state_files": {
+    "node_status": "state/node_status.json",
+    "pipeline_status": "state/pipeline_status.json"
+  }
+}

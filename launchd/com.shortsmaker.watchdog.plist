@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- watchdog: 영속 서비스 생존 감시 루프. launchd KeepAlive 와 이중 안전망 (②). -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shortsmaker.watchdog</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/abcd/ai_workplace_mac/shorts_maker/harness/watchdog.sh</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+  <key>WorkingDirectory</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker</string>
+  <key>StandardOutPath</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/watchdog.out</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/watchdog.err</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/opt/homebrew/bin:/Users/abcd/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+</dict>
+</plist>

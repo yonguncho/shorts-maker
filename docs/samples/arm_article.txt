@@ -1,0 +1,7 @@
+Arm Holdings Rockets 18% as Nvidia's RTX Spark Validates Arm-Based AI PCs
+
+Arm Holdings (NASDAQ: ARM) stock surged sharply on Monday, jumping roughly 18% intraday to around $416, after Nvidia unveiled its new RTX Spark "Superchip" platform built on Arm's CPU architecture. The launch positions Arm at the center of a new class of AI-capable Windows PCs, expanding Arm's royalty base from smartphones into high-end laptops and data-center reference designs.
+
+The move was not driven by Arm's own earnings or guidance. Instead, it reflected validation: Nvidia choosing Arm cores for its next-generation AI PC chips signals durable demand for Arm's licensing model. Microsoft reiterated its commitment to Windows on Arm, and Dell was named among the first OEM partners shipping RTX Spark systems.
+
+Analysts noted that the rally came on elevated volume, with several semiconductor peers moving in sympathy. Marvell, Micron, and Taiwan Semiconductor all traded higher, while equipment names such as ASML lagged despite similar long-term exposure to the AI-chip buildout. Some traders cautioned that Arm shares were already extended, trading near 52-week highs with a stretched RSI after a multi-month run, leaving the move vulnerable if the validation does not translate into near-term royalty revenue.

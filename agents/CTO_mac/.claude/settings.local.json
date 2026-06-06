@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/abcd/ai_workplace_mac/shorts_maker/**)",
+      "Bash(ls -la agents/)",
+      "Bash(launchctl list *)",
+      "Bash(ps -o %cpu=,time= -p 54992)",
+      "Bash(ps -o pid,stat,wchan,time,%cpu -p 54992)",
+      "Bash(ps -o time= -p 54992)",
+      "Bash(ps -o pid,ppid,command -p 54937)",
+      "Bash(ps -o pid,ppid,stat,etime,time,command -p 8373)",
+      "Bash(grep -i jarvis)",
+      "Bash(echo \"\\(com.shortsmaker.jarvis 미로딩\\)\")",
+      "Bash(echo \"\")",
+      "Bash(echo \"=== 설치된 plist 위치/내용 일치 확인 ===\")",
+      "Read(//Users/abcd/Library/LaunchAgents/**)",
+      "Bash(ps -o stat=,time=,%cpu= -p 76803)",
+      "Bash(ps -o time= -p 76803)",
+      "Bash(launchctl kickstart *)",
+      "Bash(echo \"kickstart 실패\\(rc=$?\\)\")",
+      "Bash(cat harness/watchdog.sh)",
+      "Bash(cat ~/Library/LaunchAgents/com.shortsmaker.agent.Director_mac.plist)",
+      "Bash(python3 -c \"import json;d=json.load\\(open\\('state/node_status.json'\\)\\);print\\(json.dumps\\(d.get\\('watchdog',{}\\),ensure_ascii=False,indent=2\\)\\)\")"
+    ]
+  }
+}

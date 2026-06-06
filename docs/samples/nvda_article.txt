@@ -1,0 +1,9 @@
+NVIDIA Blows Past Estimates as Data-Center Demand Accelerates Again
+
+NVIDIA reported fiscal first-quarter results after the bell that topped Wall Street expectations on both the top and bottom lines. Revenue came in well ahead of consensus, driven by another record quarter for its data-center segment as hyperscalers continued to expand AI training and inference capacity. Adjusted earnings per share beat the average analyst estimate, and gross margin held near record levels.
+
+More importantly for the durability of the story, management raised guidance for the current quarter above the Street's prior view, citing visibility into Blackwell-generation shipments and sustained orders from cloud providers. The company also pointed to broadening demand beyond the largest hyperscalers, including sovereign-AI projects and enterprise deployments.
+
+Analysts on the call pressed management on supply constraints and the pace of the Blackwell ramp. Executives reiterated that demand continues to exceed supply and that the ramp is progressing as planned. Several brokerages noted the guidance raise suggests the AI capex cycle is not slowing in the near term.
+
+Shares moved sharply in after-hours trading following the print. The beat-and-raise combination is the kind of catalyst that tends to be tied directly to fundamentals rather than sentiment, though the stock already trades at a premium valuation and remains sensitive to any future sign of a demand air-pocket.

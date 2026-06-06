@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Jarvis 원격제어 세션 감시 에이전트.
+     RunAtLoad+KeepAlive 로 부팅(로그인) 시 자동 기동 + 죽으면 자동 재시작.
+     래퍼(jarvis_remote.sh)가 claude --remote-control "Jarvis" --continue 를 PTY로 띄우고,
+     claude 가 어떤 이유로든 종료되면 래퍼 종료 → launchd 재기동 → --continue 로 직전 작업 이어받음. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shortsmaker.jarvis</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/abcd/ai_workplace_mac/shorts_maker/harness/jarvis_remote.sh</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>15</integer>
+  <key>WorkingDirectory</key>
+  <string>/Users/abcd/ai_workplace_mac</string>
+  <key>StandardOutPath</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/jarvis_remote.out</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/jarvis_remote.err</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/opt/homebrew/bin:/Users/abcd/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/abcd</string>
+  </dict>
+</dict>
+</plist>

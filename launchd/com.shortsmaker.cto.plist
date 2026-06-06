@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- CTO_mac 노드: 영속 명령수신+상태보고 루프.
+     RunAtLoad+KeepAlive 로 부팅 시 자동 기동 + 죽으면 자동 재시작 (②). -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shortsmaker.cto</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/abcd/ai_workplace_mac/shorts_maker/harness/cto_mac_node.sh</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+  <key>WorkingDirectory</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker</string>
+  <key>StandardOutPath</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/cto_mac_node.out</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/abcd/ai_workplace_mac/shorts_maker/logs/cto_mac_node.err</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/opt/homebrew/bin:/Users/abcd/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+</dict>
+</plist>
