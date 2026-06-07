@@ -89,7 +89,7 @@ def run(ticker, article, article_date=None, theme="terminal", skip_sec=False, ou
     rpt("compose")
     out_mp4 = "short.mp4" if theme == "terminal" else f"short_{theme}.mp4"
     Compose.render(ticker, out_name=out_mp4, theme=theme)
-    mp4 = out_dir / "short.mp4"
+    mp4 = out_dir / out_mp4
 
     # render_report.json (H.8 atomic write)
     fmt = _probe(mp4)

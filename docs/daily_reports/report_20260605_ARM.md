@@ -1,7 +1,7 @@
 # Trader Cho 일일 리포트 — ARM 20260605
-생성: 2026-06-06 07:00 KST
+생성: 2026-06-07 07:00 KST
 
-## ARM -11.90%
+## ARM -12.84%
 
 ## 📥 영상 다운로드
 - **직접 다운로드**: https://github.com/yonguncho/tradercho-daily/releases/download/ARM-20260605/short_brightnews.mp4
@@ -10,20 +10,20 @@
 ## 📝 YouTube 설명 (붙여넣기용)
 
 ```
-ARM is cooling after Nvidia's announcement. Did insiders fade it?
+ARM's 12.8% Friday-close drop: jobs scare or false alarm?
 
-ARM (-11.90%) — here's the full breakdown.
+ARM (-12.84%) — here's the full breakdown.
 
 📊 Today's Numbers:
-• ARM: -11.90% (mid)
-• vs SPX: -1.65%
-• RSI: 61.4  |  Volume: 0.78x avg
+• ARM: -12.84% (mid)
+• vs SPX: -2.64%
+• RSI: 60.5  |  Volume: 1.17x avg
 
-🔍 Catalyst: Sympathy (TEMPORARY)
-The move appears tied to an Nvidia announcement lifting Arm shares, not a fresh Arm-specific operating update.
+🔍 Catalyst: Macro (TEMPORARY)
+ARM appears to have sold off with high-growth AI semis after stronger-than-expected jobs data reduced rate-cut hopes.
 
 ⚖️ The Read:
-They appear to have sold before the Nvidia-linked high, making the bullish read more suspect.
+Maybe, but volume did not confirm capitulation; buyers still need to defend it.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📅 Data: Jun 5, 2026
