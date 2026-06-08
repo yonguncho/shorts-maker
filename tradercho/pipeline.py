@@ -181,27 +181,42 @@ def run_auto(theme: str = "brightnews", min_confidence: str = "high") -> list[di
     for pick in selected:
         ticker = pick["ticker"]
         article_url = pick.get("article_url", "")
-        # A0.5: url_valid=False 종목 스킵
-        if not pick.get("url_valid", True):
-            print(f"\n[AUTO] ✗ {ticker} 스킵 (url_valid=false): {article_url[:60]}")
-            results.append({"ticker": ticker, "skipped": "url_invalid",
-                            "article_url": article_url, "pick": pick})
-            continue
-        # A0.6: article_url에서 본문 취득 — 100자 미만이면 스킵
         import article_fetch as AF
-        try:
-            article_text = AF.fetch(article_url)
-            if len(article_text.strip()) < AF.MIN_CHARS:
-                print(f"\n[AUTO] ✗ {ticker} 스킵 (기사 본문 {len(article_text.strip())}자 미만 — A0.6)")
-                results.append({"ticker": ticker, "skipped": "article_too_short",
+        import news_fetch as NF
+        article_text = None
+
+        # A0.5: url_valid=False → news_fetch.fetch_latest() 폴백 (RSS 홈URL 대응)
+        if not pick.get("url_valid", True):
+            print(f"\n[AUTO] ⚠ {ticker} url_valid=false → news_fetch 폴백")
+            try:
+                article_text, meta = NF.fetch_latest(ticker)
+                if len(article_text.strip()) < AF.MIN_CHARS:
+                    article_text = None
+                else:
+                    article_url = meta.get("url", article_url)
+                    print(f"    [폴백] {len(article_text)}chars from {article_url[:60]}")
+            except Exception as e:
+                print(f"    [폴백] fetch_latest 실패: {e}")
+            if article_text is None:
+                print(f"\n[AUTO] ✗ {ticker} 스킵 (폴백도 본문 없음)")
+                results.append({"ticker": ticker, "skipped": "url_invalid_no_fallback",
                                 "article_url": article_url, "pick": pick})
                 continue
-            print(f"    article: {len(article_text)} chars from {article_url[:60]}")
-        except Exception as e:
-            print(f"\n[AUTO] ✗ {ticker} 스킵 (article_fetch 실패: {e})")
-            results.append({"ticker": ticker, "skipped": "article_fetch_failed",
-                            "article_url": article_url, "pick": pick})
-            continue
+        else:
+            # A0.6: article_url에서 본문 취득 — 100자 미만이면 스킵
+            try:
+                article_text = AF.fetch(article_url)
+                if len(article_text.strip()) < AF.MIN_CHARS:
+                    print(f"\n[AUTO] ✗ {ticker} 스킵 (기사 본문 {len(article_text.strip())}자 미만 — A0.6)")
+                    results.append({"ticker": ticker, "skipped": "article_too_short",
+                                    "article_url": article_url, "pick": pick})
+                    continue
+                print(f"    article: {len(article_text)} chars from {article_url[:60]}")
+            except Exception as e:
+                print(f"\n[AUTO] ✗ {ticker} 스킵 (article_fetch 실패: {e})")
+                results.append({"ticker": ticker, "skipped": "article_fetch_failed",
+                                "article_url": article_url, "pick": pick})
+                continue
 
         print(f"\n[AUTO] ▶ {ticker}  ({pick.get('confidence')} / {pick.get('catalyst_type')})")
         try:
